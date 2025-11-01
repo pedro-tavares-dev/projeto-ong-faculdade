@@ -1,26 +1,15 @@
 /* =========================================
    FUNDAÇÃO (O Reset e as Variáveis)
    ========================================= */
-
-/* * 1. O "Reset" profissional:
- * Faz com que a 'borda' e o 'padding' sejam contados 
- * para dentro da largura (width) do elemento.
- * Isso salva MUITA dor de cabeça com layouts.
- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* * 2. Variáveis CSS (A parte mais "profissional"):
- * Definimos nossas cores e fontes principais aqui.
- * Se o cliente quiser mudar o "azul" por "verde",
- * você só muda em UM lugar.
- */
 :root {
-    --cor-primaria: #005a9c;  /* Um azul confiável para ONGs */
-    --cor-secundaria: #f7a81b; /* Um laranja/amarelo para destaque */
+    --cor-primaria: #005a9c;
+    --cor-secundaria: #f7a81b;
     --cor-texto: #333;
     --cor-fundo: #f4f4f4;
     --largura-maxima: 1100px;
@@ -29,17 +18,16 @@
 /* =========================================
    ESTILOS GLOBAIS (Body, Fontes, Links)
    ========================================= */
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    line-height: 1.6; /* Melhora a legibilidade */
+    line-height: 1.6;
 }
 
 h1, h2, h3 {
     color: var(--cor-primaria);
-    margin-bottom: 1rem; /* 1rem = 16px (geralmente) */
+    margin-bottom: 1rem;
 }
 
 a {
@@ -52,7 +40,7 @@ a:hover {
 }
 
 img {
-    max-width: 100%; /* Faz as imagens serem responsivas */
+    max-width: 100%;
     height: auto;
     display: block;
 }
@@ -60,15 +48,11 @@ img {
 /* =========================================
    LAYOUT (Header, Footer, Main)
    ========================================= */
-
-/* * Vamos usar 'header', 'main' e 'footer' como 
- * "containers" para centralizar o conteúdo.
- */
 header, main, footer {
     width: 100%;
     max-width: var(--largura-maxima);
-    margin: 0 auto; /* Centraliza o container */
-    padding: 2rem;  /* Um respiro interno */
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 /* --- Header e Navegação --- */
@@ -76,22 +60,21 @@ header {
     background-color: #fff;
     border-bottom: 2px solid var(--cor-primaria);
     display: flex;
-    justify-content: space-between; /* Logo de um lado, nav do outro */
+    justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-/* Adicione um <h1> com a classe 'logo' no seu header */
 .logo {
     font-size: 1.8rem;
     color: var(--cor-primaria);
 }
 
 header nav ul {
-    list-style: none; /* Remove as bolinhas */
+    list-style: none;
     display: flex;
-    gap: 1.5rem; /* Espaçamento entre os links */
+    gap: 1.5rem;
 }
 
 header nav a {
@@ -111,7 +94,7 @@ header nav a:hover {
 /* --- Conteúdo Principal --- */
 main {
     background-color: #fff;
-    min-height: 60vh; /* Altura mínima (viewport height) */
+    min-height: 60vh;
 }
 
 /* --- Rodapé --- */
@@ -127,8 +110,6 @@ footer {
    ========================================= */
 
 /* --- Formulário (cadastro.html) --- */
-
-/* Fieldset e Legend */
 fieldset {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -143,18 +124,16 @@ legend {
     padding: 0 0.5rem;
 }
 
-/* Organiza os campos (label + input) */
 form div {
     margin-bottom: 1rem;
 }
 
 label {
-    display: block; /* Faz o <label> ocupar a linha toda */
+    display: block;
     font-weight: bold;
     margin-bottom: 0.3rem;
 }
 
-/* Estilização dos campos de input */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -171,7 +150,6 @@ input:focus {
     border-color: var(--cor-primaria);
 }
 
-/* Botão de Envio */
 button[type="submit"] {
     background-color: var(--cor-primaria);
     color: #fff;
@@ -185,15 +163,10 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #004a80; /* Um azul um pouco mais escuro */
+    background-color: #004a80;
 }
 
 /* --- Cards de Projeto (projetos.html) --- */
-
-/* * ATUALIZE SEU HTML:
- * Em projetos.html, mude seus <article> para:
- * <article class="card-projeto"> ... </article>
- */
 .card-projeto {
     background-color: #f9f9f9;
     border: 1px solid #eee;
@@ -209,55 +182,34 @@ button[type="submit"]:hover {
 }
 
 /* =========================================
-   RESPONSIVIDADE (Mobile-First)
+   ESTILOS DA PÁGINA INICIAL (INDEX)
    ========================================= */
 
-/* * Media Query: 
- * Se a tela for MENOR que 768px...
- */
-@media (max-width: 768px) {
-    
-    header {
-        flex-direction: column; /* Empilha o logo e o menu */
-        gap: 1rem;
-    }
-
-    header nav ul {
-        flex-direction: column; /* Empilha os links do menu */
-        width: 100%;
-        text-align: center;
-    }
-
-    header nav a {
-        display: block; /* Faz o link ocupar a linha toda */
-        background-color: #f4f4f4;
-    }
-    
-    main, header, footer {
-        padding: 1rem; /* Diminui o respiro em telas pequenas */
-    }
-    .hero {
-    /* Você pode trocar a cor por uma imagem de fundo depois */
+/* --- Seção Hero --- */
+.hero {
     background-color: var(--cor-primaria);
     color: #fff;
-    padding: 4rem 2rem; /* Mais espaçamento vertical */
+    padding: 4rem 2rem;
     text-align: center;
-    border-radius: 8px; /* Cantos arredondados */
-    margin-bottom: 2rem; /* Espaço abaixo do hero */
+    border-radius: 8px;
+    margin-bottom: 2rem;
 }
 
 .hero h1 {
-    font-size: 2rem;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-.hero {
-    padding: 2rem 1rem;
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 /* --- Botão CTA (Call to Action) --- */
 .cta-button {
-    background-color: var(--cor-secundaria); /* Cor de destaque! */
-    color: #333; /* Texto escuro para contrastar com o amarelo */
+    background-color: var(--cor-secundaria);
+    color: #333;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: bold;
@@ -267,7 +219,7 @@ button[type="submit"]:hover {
 }
 
 .cta-button:hover {
-    transform: scale(1.05); /* Efeito de zoom */
+    transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     text-decoration: none;
     color: #000;
@@ -275,8 +227,9 @@ button[type="submit"]:hover {
 
 /* --- Grid de Conteúdo (Sobre + Contato) --- */
 .content-wrapper {
-    /* No celular, volta a ser uma coluna só */
-    grid-template-columns: 1fr; 
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
 }
 
 .info-sobre img {
@@ -293,10 +246,46 @@ button[type="submit"]:hover {
 }
 
 .info-contato ul {
-    list-style: none; /* Remove as bolinhas da lista de contato */
+    list-style: none;
 }
 
 .info-contato li {
     margin-bottom: 0.8rem;
 }
+
+/* =========================================
+   RESPONSIVIDADE (Mobile-First)
+   ========================================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav a {
+        display: block;
+        background-color: #f4f4f4;
+    }
+    
+    main, header, footer {
+        padding: 1rem;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr; 
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
