@@ -1,0 +1,302 @@
+/* =========================================
+   FUNDAÇÃO (O Reset e as Variáveis)
+   ========================================= */
+
+/* * 1. O "Reset" profissional:
+ * Faz com que a 'borda' e o 'padding' sejam contados 
+ * para dentro da largura (width) do elemento.
+ * Isso salva MUITA dor de cabeça com layouts.
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* * 2. Variáveis CSS (A parte mais "profissional"):
+ * Definimos nossas cores e fontes principais aqui.
+ * Se o cliente quiser mudar o "azul" por "verde",
+ * você só muda em UM lugar.
+ */
+:root {
+    --cor-primaria: #005a9c;  /* Um azul confiável para ONGs */
+    --cor-secundaria: #f7a81b; /* Um laranja/amarelo para destaque */
+    --cor-texto: #333;
+    --cor-fundo: #f4f4f4;
+    --largura-maxima: 1100px;
+}
+
+/* =========================================
+   ESTILOS GLOBAIS (Body, Fontes, Links)
+   ========================================= */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6; /* Melhora a legibilidade */
+}
+
+h1, h2, h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem; /* 1rem = 16px (geralmente) */
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%; /* Faz as imagens serem responsivas */
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   LAYOUT (Header, Footer, Main)
+   ========================================= */
+
+/* * Vamos usar 'header', 'main' e 'footer' como 
+ * "containers" para centralizar o conteúdo.
+ */
+header, main, footer {
+    width: 100%;
+    max-width: var(--largura-maxima);
+    margin: 0 auto; /* Centraliza o container */
+    padding: 2rem;  /* Um respiro interno */
+}
+
+/* --- Header e Navegação --- */
+header {
+    background-color: #fff;
+    border-bottom: 2px solid var(--cor-primaria);
+    display: flex;
+    justify-content: space-between; /* Logo de um lado, nav do outro */
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Adicione um <h1> com a classe 'logo' no seu header */
+.logo {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+}
+
+header nav ul {
+    list-style: none; /* Remove as bolinhas */
+    display: flex;
+    gap: 1.5rem; /* Espaçamento entre os links */
+}
+
+header nav a {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- Conteúdo Principal --- */
+main {
+    background-color: #fff;
+    min-height: 60vh; /* Altura mínima (viewport height) */
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    margin-top: 1rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   COMPONENTES (Formulários, Cards)
+   ========================================= */
+
+/* --- Formulário (cadastro.html) --- */
+
+/* Fieldset e Legend */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+legend {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    padding: 0 0.5rem;
+}
+
+/* Organiza os campos (label + input) */
+form div {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block; /* Faz o <label> ocupar a linha toda */
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+/* Estilização dos campos de input */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: 2px solid var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+/* Botão de Envio */
+button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #004a80; /* Um azul um pouco mais escuro */
+}
+
+/* --- Cards de Projeto (projetos.html) --- */
+
+/* * ATUALIZE SEU HTML:
+ * Em projetos.html, mude seus <article> para:
+ * <article class="card-projeto"> ... </article>
+ */
+.card-projeto {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card-projeto img {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile-First)
+   ========================================= */
+
+/* * Media Query: 
+ * Se a tela for MENOR que 768px...
+ */
+@media (max-width: 768px) {
+    
+    header {
+        flex-direction: column; /* Empilha o logo e o menu */
+        gap: 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Empilha os links do menu */
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav a {
+        display: block; /* Faz o link ocupar a linha toda */
+        background-color: #f4f4f4;
+    }
+    
+    main, header, footer {
+        padding: 1rem; /* Diminui o respiro em telas pequenas */
+    }
+    .hero {
+    /* Você pode trocar a cor por uma imagem de fundo depois */
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 4rem 2rem; /* Mais espaçamento vertical */
+    text-align: center;
+    border-radius: 8px; /* Cantos arredondados */
+    margin-bottom: 2rem; /* Espaço abaixo do hero */
+}
+
+.hero h1 {
+    font-size: 2rem;
+}
+
+.hero {
+    padding: 2rem 1rem;
+}
+
+/* --- Botão CTA (Call to Action) --- */
+.cta-button {
+    background-color: var(--cor-secundaria); /* Cor de destaque! */
+    color: #333; /* Texto escuro para contrastar com o amarelo */
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05); /* Efeito de zoom */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: #000;
+}
+
+/* --- Grid de Conteúdo (Sobre + Contato) --- */
+.content-wrapper {
+    /* No celular, volta a ser uma coluna só */
+    grid-template-columns: 1fr; 
+}
+
+.info-sobre img {
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.info-contato {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.info-contato ul {
+    list-style: none; /* Remove as bolinhas da lista de contato */
+}
+
+.info-contato li {
+    margin-bottom: 0.8rem;
+}
+}
