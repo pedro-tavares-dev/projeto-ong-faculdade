@@ -1,0 +1,89 @@
+/* css/components/_forms.css */
+
+.form-group {
+    margin-bottom: var(--space-3x); /* 24px */
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: var(--space-1x); /* 8px */
+    color: var(--color-text);
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: var(--space-2x); /* 16px */
+    font-size: var(--font-size-md);
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 90, 156, 0.2); /* Sombra de foco */
+}
+
+/* --- Validação Visual (Requisito) --- */
+
+/* Estilo para inputs que SÃO válidos */
+.form-control:valid {
+    border-color: var(--color-success);
+}
+
+/* Estilo para inputs que SÃO inválidos */
+.form-control:invalid:not(:placeholder-shown) {
+    border-color: var(--color-danger);
+    background-color: rgb(247, 237, 237);
+}
+/* :not(:placeholder-shown) evita que o campo fique vermelho
+   antes mesmo do usuário digitar algo */
+
+/* Estilizando o Fieldset e Legend */
+fieldset {
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--border-radius);
+    padding: var(--space-4x); /* 32px */
+    margin-bottom: var(--space-3x);
+}
+
+legend {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 0 var(--space-2x);
+}
+
+/* --- Estilos de Validação JS --- */
+
+.form-error-message {
+    color: var(--color-danger);
+    font-size: var(--font-size-sm); /* 14px */
+    margin-top: var(--space-1x); /* 8px */
+    
+    /* Começa escondido, mas de um jeito que o JS controla */
+    display: none;
+}
+
+/* Quando o JS adiciona a classe .error no form-group... */
+.form-group.error .form-error-message {
+    display: block; /* A mensagem de erro aparece */
+}
+
+.form-group.error .form-control {
+    border-color: var(--color-danger); /* A borda fica vermelha */
+    background-color: #fff8f8; /* Fundo levemente rosado */
+}
+
+/* --- Desligando a Validação Antiga --- */
+/* Isso desfaz os campos vermelhos que vimos na Entrega II,
+   pois agora o JS vai controlar 100% */
+   
+.form-control:invalid:not(:placeholder-shown),
+.form-control:valid {
+    border-color: var(--color-neutral-300); /* Volta à borda normal */
+    background-color: var(--color-neutral-100); /* Volta ao fundo normal */
+}

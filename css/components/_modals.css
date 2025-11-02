@@ -1,0 +1,28 @@
+/* css/components/_modals.css */
+/* Vamos criar um componente de ALERTA */
+
+.alert {
+    padding: var(--space-3x); /* 24px */
+    margin-bottom: var(--space-3x);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}

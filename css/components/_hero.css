@@ -1,0 +1,22 @@
+/* css/components/_hero.css */
+
+.hero {
+    /* Estes são os estilos que estavam inline: */
+    background-color: var(--color-primary);
+    color: var(--color-neutral-100);
+    padding: var(--space-8x) 0; /* 64px top/bottom, 0 left/right */
+    text-align: center;
+}
+
+.hero h1 {
+    /* Estilos bônus para melhorar */
+    color: var(--color-neutral-100);
+    font-size: var(--font-size-xxl); /* 48px */
+    margin-bottom: var(--space-3x);
+}
+
+.hero p {
+    font-size: var(--font-size-lg); /* 24px */
+    color: var(--color-neutral-200);
+    margin-bottom: var(--space-4x); /* 32px */
+}

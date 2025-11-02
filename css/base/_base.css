@@ -1,0 +1,31 @@
+/* css/base/_base.css */
+body {
+    background-color: var(--color-neutral-200);
+    color: var(--color-text);
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: var(--space-2x);
+    /* font-family: var(--font-display); */ /* Descomente se quiser a fonte de título */
+}
+
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: 1.25rem; font-weight: bold; } /* H3 um pouco maior que o texto */
+
+p {
+    margin-bottom: var(--space-2x);
+}
+
+a {
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}

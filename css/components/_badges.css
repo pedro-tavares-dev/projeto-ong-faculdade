@@ -1,0 +1,29 @@
+/* css/components/_badges.css */
+
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em; /* 'em' se ajusta ao tamanho da fonte */
+    font-size: var(--font-size-xs); /* 12px */
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 50rem; /* Truque para ser sempre arredondado */
+}
+
+/* Modificadores de cor (exemplo) */
+.badge-primary {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-100);
+}
+
+.badge-success {
+    background-color: var(--color-success);
+    color: var(--color-neutral-100);
+}
+
+.badge-warning {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}

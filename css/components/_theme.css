@@ -1,0 +1,74 @@
+/* css/components/_theme.css */
+
+/* --- 1. O Botão de Alternar --- */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--border-radius);
+    padding: var(--space-1x);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    /* Alinha ele ao lado do botão hambúrguer */
+    margin-left: var(--space-2x);
+}
+
+/* Esconde a Lua por padrão */
+.theme-toggle .icon-moon { display: none; }
+
+/* --- 2. O MODO ESCURO / ALTO CONTRASTE --- */
+/* Esta é a classe que o JS vai adicionar no <body> */
+body.dark-mode {
+    /* (A) Inverte as cores base */
+    --color-primary: #52a9ff; /* Azul mais claro */
+    --color-secondary: #f7a81b; /* Amarelo se mantém */
+    
+    --color-text: #e0e0e0;
+    --color-text-light: #b0b0b0;
+    
+    --color-neutral-100: #1e1e1e; /* Fundo de cards (escuro) */
+    --color-neutral-200: #121212; /* Fundo da página (escuro) */
+    --color-neutral-300: #444444; /* Bordas */
+    --color-neutral-700: #e0e0e0; /* Textos de subtítulo */
+    
+    --box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* (B) Regras específicas para o Modo Escuro */
+body.dark-mode {
+    /* Re-aplica as variáveis para o navegador entender */
+    background-color: var(--color-neutral-200);
+    color: var(--color-text);
+}
+
+/* Ajusta componentes que usavam cores fixas */
+body.dark-mode .main-header {
+    background-color: var(--color-neutral-100);
+    border-bottom-color: var(--color-primary);
+}
+
+body.dark-mode .main-footer {
+    background-color: var(--color-neutral-100);
+    color: var(--color-text-light);
+}
+
+body.dark-mode .card,
+body.dark-mode .widget-box,
+body.dark-mode .form-control {
+    background-color: var(--color-neutral-100);
+    border-color: var(--color-neutral-300);
+}
+
+body.dark-mode .form-control:focus {
+    background-color: var(--color-neutral-200);
+}
+
+/* (C) Alterna os ícones do botão */
+body.dark-mode .theme-toggle {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-100);
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .theme-toggle .icon-sun { display: none; }
+body.dark-mode .theme-toggle .icon-moon { display: block; }
