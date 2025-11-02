@@ -3,7 +3,7 @@
         "id": 1,
         "titulo": "Projeto Educação Digital",
         "descricao": "Levamos inclusão digital para comunidades carentes, ensinando programação e informática básica.",
-        "imagem": "imagens/projeto-educacao.jpg",
+        "imagem": "imagens/ensine.jpg",
         "badge": {
             "texto": "Educação",
             "classe": "badge-primary"
@@ -13,7 +13,7 @@
         "id": 2,
         "titulo": "Sopa Solidária",
         "descricao": "Distribuímos refeições para pessoas em situação de vulnerabilidade social todas as noites.",
-        "imagem": "imagens/projeto-sopa.jpg",
+        "imagem": "imagens/sopa.jpg",
         "badge": {
             "texto": "Alimentação",
             "classe": "badge-success"
@@ -23,7 +23,7 @@
         "id": 3,
         "titulo": "Seja um Herói",
         "descricao": "Nosso programa de voluntariado está sempre aberto para novos membros. Faça parte!",
-        "imagem": "imagens/ong-principal.jpg",
+        "imagem": "imagens/sejaumheroi.jpg",
         "badge": {
             "texto": "Voluntariado",
             "classe": "badge-warning"

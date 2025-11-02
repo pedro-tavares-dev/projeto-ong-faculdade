@@ -1,4 +1,59 @@
 /* js/main.js */
+/* js/main.js */
+
+/* --- LÓGICA DO TEMA (MODO ESCURO) --- */
+
+// (Função Imediata para não poluir o escopo global)
+(function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // 1. A Chave que usamos para salvar no "HD" do navegador
+    const storageKey = 'theme-preference';
+
+    // 2. Função que aplica o tema
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.setAttribute('aria-label', 'Alternar modo claro');
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.setAttribute('aria-label', 'Alternar modo escuro');
+        }
+    }
+
+    // 3. Pega a preferência salva no localStorage
+    //    Se não houver, ele usa 'light' como padrão
+    let preferredTheme = localStorage.getItem(storageKey) || 'light';
+
+    // 4. Aplica o tema salvo assim que a página carrega
+    applyTheme(preferredTheme);
+
+    // 5. O "ouvinte" do clique no botão
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            // Inverte o tema atual
+            preferredTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+            
+            // Salva a nova preferência no localStorage
+            localStorage.setItem(storageKey, preferredTheme);
+            
+            // Aplica a mudança na tela
+            applyTheme(preferredTheme);
+        });
+    }
+})();
+
+
+/* --- RESTO DO SEU main.js --- */
+// (O seu DOMContentLoaded com o menu hambúrguer e dropdown vem aqui embaixo)
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ... (seu código de menu hambúrguer) ...
+    
+    // ... (seu código de dropdown dinâmico) ...
+
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     

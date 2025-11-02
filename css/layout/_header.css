@@ -9,7 +9,6 @@
 
 .main-header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -20,7 +19,6 @@
 }
 
 /* --- 1. BOTÃO HAMBÚRGUER (MOBILE-FIRST) --- */
-/* Por padrão (mobile), ele aparece */
 .menu-toggle {
     display: block;
     background: none;
@@ -30,14 +28,19 @@
     cursor: pointer;
     color: var(--color-primary);
     font-size: var(--font-size-lg);
+    margin-left: var(--space-3x); /* Espaço do menu */
 }
 
-/* --- 2. NAVEGAÇÃO (MOBILE-FIRST) --- */
-/* Por padrão (mobile), ela é escondida */
+/* --- 2. BOTÃO DE TEMA (MOBILE-FIRST) --- */
+.theme-toggle {
+    margin-left: var(--space-2x); /* Espaço do menu-toggle */
+}
+
+/* --- 3. NAVEGAÇÃO (MOBILE-FIRST) --- */
 .main-nav {
-    display: none; 
+    display: none; /* Começa escondido */
     position: absolute;
-    top: 80px; /* Altura do header (ajuste se precisar) */
+    top: 80px; 
     left: 0;
     width: 100%;
     background-color: var(--color-neutral-100);
@@ -50,13 +53,14 @@
     display: block;
 }
 
-.main-nav ul {
-    flex-direction: column; /* Empilhado no mobile */
+/* O '>' (seletor de filho) previne o "vazamento" de regras */
+.main-nav > ul {
+    flex-direction: column; 
 }
 
 .main-nav li {
     width: 100%;
-    position: relative; /* Mantém para o dropdown */
+    position: relative; 
 }
 
 .main-nav a {
@@ -68,9 +72,10 @@
     border-bottom: 1px solid var(--color-neutral-200);
 }
 
-/* --- 3. DROPDOWN (MOBILE-FIRST) --- */
-/* Por padrão (mobile), ele é estático e visível dentro do menu */
+/* --- 4. DROPDOWN (MOBILE-FIRST) --- */
+/* No mobile, o dropdown é parte do fluxo normal */
 .dropdown-menu {
+    /* REMOVEMOS O 'display: block;' DAQUI (o bug original) */
     position: static;
     background-color: var(--color-neutral-200);
     box-shadow: none;
@@ -79,14 +84,14 @@
 
 .dropdown-menu a {
     font-size: var(--font-size-sm);
-    padding-left: var(--space-4x); /* Indentação */
+    padding-left: var(--space-4x); 
     border-bottom: 1px solid var(--color-neutral-300);
     text-align: left;
 }
 
+
 /* =========================================
    ESTILOS DESKTOP (A PARTIR DE 992px)
-   Aqui que a mágica (e a correção) acontece
    ========================================= */
 
 @media (min-width: 992px) {
@@ -96,27 +101,30 @@
         display: none;
     }
 
-    /* 2. Mostra a navegação e alinha */
+    /* 2. Alinha o menu principal */
     .main-nav {
         display: block;
         position: static;
         width: auto;
         background-color: transparent;
         box-shadow: none;
+        margin-left: auto; /* EMPURRA O MENU PARA A DIREITA */
+        margin-right: var(--space-3x); /* Espaço antes do botão de tema */
     }
 
-    .main-nav ul {
-        display: flex; /* <-- Importante */
-        flex-direction: row; /* Alinha na horizontal */
+    /* 3. O '>' (seletor de filho) corrige o vazamento */
+    .main-nav > ul {
+        display: flex; 
+        flex-direction: row; 
         gap: var(--space-1x);
     }
 
     .main-nav li {
-        width: auto; /* Largura automática */
+        width: auto; 
     }
 
     .main-nav a {
-        border-bottom: none; /* Remove a borda do mobile */
+        border-bottom: none; 
     }
 
     .main-nav a:hover,
@@ -125,11 +133,14 @@
         color: var(--color-neutral-100);
         border-radius: var(--border-radius);
     }
+    
+    .theme-toggle {
+        margin-left: 0; /* Reseta o margin-left do mobile */
+    }
 
-    /* 3. A CORREÇÃO DO SEU BUG */
-    /* No desktop, o dropdown volta a ser escondido e absoluto */
+    /* 4. A CORREÇÃO FINAL (BUGS 1 e 2) */
     .dropdown-menu {
-        display: none; /* <-- AGORA VAI FUNCIONAR */
+        display: none; /* BUG 1: Esconde por padrão */
         position: absolute;
         top: 100%;
         left: 0;
@@ -138,11 +149,13 @@
         box-shadow: var(--box-shadow);
         min-width: 200px;
         z-index: 1000;
+        /* BUG 2: Força a direção vertical */
+        flex-direction: column; 
     }
 
     .dropdown-menu a {
-        font-size: var(--font-size-md); /* Volta ao tamanho normal */
-        padding-left: var(--space-2x); /* Volta ao padding normal */
+        font-size: var(--font-size-md);
+        padding-left: var(--space-2x);
         text-align: left;
         border-radius: 0;
         width: 100%;
@@ -154,9 +167,9 @@
         color: var(--color-neutral-100);
     }
 
-    /* 4. A REGRA DE HOVER */
-    /* Só no desktop, ao passar o mouse, o menu aparece */
+    /* 5. A REGRA DE HOVER */
     li.dropdown:hover .dropdown-menu {
-        display: block;
+        display: flex; /* Mostra o menu como flex */
+        /* E ele vai obedecer o 'flex-direction: column' acima */
     }
 }
