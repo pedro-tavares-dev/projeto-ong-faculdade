@@ -1,0 +1,31 @@
+/* css/layout/_footer.css */
+.main-footer {
+    background-color: var(--color-neutral-700);
+    color: var(--color-neutral-200);
+    padding: var(--space-6x) 0 var(--space-3x) 0; /* 48px top, 24px bottom */
+    margin-top: var(--space-4x); /* 32px */
+}
+
+.main-footer h3 {
+    color: var(--color-neutral-100);
+    margin-bottom: var(--space-3x); /* 24px */
+}
+
+.main-footer a {
+    color: var(--color-neutral-300);
+    text-decoration: none;
+    line-height: 2;
+}
+
+.main-footer a:hover {
+    color: var(--color-neutral-100);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid var(--color-neutral-300);
+    padding-top: var(--space-3x); /* 24px */
+    margin-top: var(--space-4x); /* 32px */
+    font-size: var(--font-size-sm);
+}

@@ -1,0 +1,29 @@
+/* css/main.css */
+
+/* 1. Base (Variáveis, Resets, Tipografia) */
+@import url('base/_variables.css');
+@import url('base/_reset.css');
+@import url('base/_base.css');
+
+/* 2. Layout (Grid, Header, Footer) */
+/* (Vamos criar estes em breve) */
+@import url('layout/_grid.css');
+@import url('layout/_header.css');
+@import url('layout/_footer.css');
+
+/* 3. Componentes (Botões, Cards, Formulários) */
+/* (Vamos criar estes em breve) */
+@import url('components/_buttons.css');
+@import url('components/_cards.css');
+@import url('components/_forms.css');
+@import url('components/_modals.css');
+/* ... (imports de componentes) ... */
+@import url('components/_forms.css');
+@import url('components/_modals.css');
+
+/* NOVOS IMPORTS */
+@import url('components/_hero.css');
+@import url('components/_widgets.css');
+
+/* ADICIONE ESTA LINHA: */
+@import url('components/_badges.css');

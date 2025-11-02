@@ -3,57 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vida na Comunidade - Página Inicial</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Vida na Comunidade</title>
+    <link rel="stylesheet" href="css/main.css?v=2">
 </head>
-<body>
 
-    <header>
+<body class="site-wrapper"> 
 
-        <h1 class="logo">Vida na Comunidade</h1>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
-            </ul>
-        </nav>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Vida na Comunidade</a>
+            
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li class="active"><a href="index.html">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="projetos.html">Projetos</a>
+                    </li>
+                    
+                    <li><a href="cadastro.html">Participe</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                &#9776; </button>
+        </div>
     </header>
 
-    <main>
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Transformando Vidas, Um Gesto de Cada Vez</h2>
-            <p>Conheça nossos projetos e veja como você pode fazer a diferença na comunidade.</p>
-            <a href="projetos.html" class="cta-button">Conheça Nossos Projetos</a>
-        </div>
-    </section>
+                <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Transformando Vidas</h1>
+                    <p>Seja parte da mudança. Conheça nossos projetos.</p>
+                    
+                    <a href="projetos.html" class="btn btn-secondary">Conheça os Projetos</a>
+                </div>
+            </section>
 
-    <div class="content-wrapper">
-        
-        <section class="info-sobre">
-            <h2>Sobre Nós</h2>
-            <p>Fundada em 2025, nossa organização já impactou mais de 12 pessoas. Somos movidos pela paixão de ajudar as comunidades carentes e acreditamos que juntos podemos construir um futuro melhor.</p>
+            <section class="page-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2>Sobre Nós</h2>
+                            <p>Fundada em 2025, nossa organização...</p>
+                            <img src="imagens/nos.jpg" alt="Equipe ONG">
+                        </div>
+                        
+                        <div class="col-lg-4">
+                            <div class="widget-box">
+                                <h3>Contato Rápido</h3>
+                                <ul>
+                                    <li><strong>Email:</strong> vidanacomunidade@ong.com.br</li>
+                                    <li><strong>Telefone:</strong> (99) 99999-9999</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Vida na Comunidade</h3>
+                    <p>Nossa missão é transformar vidas...</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                        <li><a href="cadastro.html">Participe</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contato</h3>
+                    <p>Rua Fictícia, 123<br>contato@ong.com.br</p>
+                </div>
+            </div>
             
-            <img src="imagens/equipe-ong.jpg" alt="Equipe da ONG sorrindo e trabalhando">
-        </section>
-        
-        <aside class="info-contato">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco para parcerias e mais informações:</p>
-            <ul>
-                <li><strong>Email:</strong> contato@ong.com.br</li>
-                <li><strong>Telefone:</strong> (99) 99999-9999</li>
-                <li><strong>Endereço:</strong> Rua Fictícia, 123, Centro</li>
-            </ul>
-        </aside>
-    </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 - Vida na Comunidade. Todos os direitos reservados.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vida na Comunidade]. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="js/main.js"></script>
 
 </body>
 </html>

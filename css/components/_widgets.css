@@ -1,0 +1,25 @@
+/* css/components/_widgets.css */
+
+.widget-box {
+    /* Estes são os estilos que estavam inline: */
+    background-color: var(--color-neutral-100);
+    padding: var(--space-4x); /* 32px */
+    border-radius: var(--border-radius);
+    
+    /* Bônus para ficar mais profissional */
+    box-shadow: var(--box-shadow);
+    height: 100%; /* Ocupa a altura da coluna */
+}
+
+.widget-box h3 {
+    margin-bottom: var(--space-3x);
+}
+
+.widget-box ul {
+    list-style: none; /* Garante que não tenha bolinhas */
+}
+
+.widget-box li {
+    margin-bottom: var(--space-2x);
+    color: var(--color-text-light);
+}

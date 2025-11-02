@@ -1,0 +1,44 @@
+/* css/base/_variables.css */
+:root {
+    /* --- 1. Paleta de Cores (Requisito: 8+ cores) --- */
+    --color-primary: #005a9c;
+    --color-primary-dark: #003e6a;
+    --color-secondary: #f7a81b;
+    --color-secondary-dark: #d68f12;
+    
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    
+    --color-text: #333333;
+    --color-text-light: #555555;
+    
+    --color-neutral-100: #FFFFFF; /* Fundo de cards, etc */
+    --color-neutral-200: #f4f4f4; /* Fundo da página */
+    --color-neutral-300: #dddddd; /* Bordas */
+    --color-neutral-700: #444444; /* Textos de subtítulo */
+
+    /* --- 2. Tipografia (Requisito: 5+ tamanhos) --- */
+    --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    --font-display: 'Georgia', serif; /* Para títulos (opcional) */
+    
+    --font-size-xs: 0.75rem;  /* 12px (para tags) */
+    --font-size-sm: 0.875rem; /* 14px (para legendas) */
+    --font-size-md: 1rem;     /* 16px (texto principal) */
+    --font-size-lg: 1.5rem;   /* 24px (subtítulos) */
+    --font-size-xl: 2.25rem;  /* 36px (títulos h2) */
+    --font-size-xxl: 3rem;    /* 48px (títulos h1) */
+
+    /* --- 3. Espaçamento Modular (Requisito: base 8px) --- */
+    --space-1x: 8px;   /* 8px */
+    --space-2x: 16px;  /* 16px */
+    --space-3x: 24px;  /* 24px */
+    --space-4x: 32px;  /* 32px */
+    --space-6x: 48px;  /* 48px */
+    --space-8x: 64px;  /* 64px */
+
+    /* --- Outras Variáveis --- */
+    --largura-maxima: 1200px;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    --transition: all 0.3s ease;
+}

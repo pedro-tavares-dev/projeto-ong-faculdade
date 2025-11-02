@@ -1,0 +1,162 @@
+/* css/layout/_header.css */
+
+.main-header {
+    background-color: var(--color-neutral-100);
+    border-bottom: 2px solid var(--color-primary);
+    padding: var(--space-2x) 0;
+    box-shadow: var(--box-shadow);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* --- 1. BOTÃO HAMBÚRGUER (MOBILE-FIRST) --- */
+/* Por padrão (mobile), ele aparece */
+.menu-toggle {
+    display: block;
+    background: none;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius);
+    padding: var(--space-1x);
+    cursor: pointer;
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+}
+
+/* --- 2. NAVEGAÇÃO (MOBILE-FIRST) --- */
+/* Por padrão (mobile), ela é escondida */
+.main-nav {
+    display: none; 
+    position: absolute;
+    top: 80px; /* Altura do header (ajuste se precisar) */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-neutral-100);
+    box-shadow: var(--box-shadow);
+    z-index: 999;
+}
+
+/* O JS adiciona esta classe para mostrar o menu */
+.main-nav.is-active {
+    display: block;
+}
+
+.main-nav ul {
+    flex-direction: column; /* Empilhado no mobile */
+}
+
+.main-nav li {
+    width: 100%;
+    position: relative; /* Mantém para o dropdown */
+}
+
+.main-nav a {
+    display: block;
+    padding: var(--space-2x);
+    font-weight: bold;
+    color: var(--color-text-light);
+    text-align: center;
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+/* --- 3. DROPDOWN (MOBILE-FIRST) --- */
+/* Por padrão (mobile), ele é estático e visível dentro do menu */
+.dropdown-menu {
+    position: static;
+    background-color: var(--color-neutral-200);
+    box-shadow: none;
+    min-width: auto;
+}
+
+.dropdown-menu a {
+    font-size: var(--font-size-sm);
+    padding-left: var(--space-4x); /* Indentação */
+    border-bottom: 1px solid var(--color-neutral-300);
+    text-align: left;
+}
+
+/* =========================================
+   ESTILOS DESKTOP (A PARTIR DE 992px)
+   Aqui que a mágica (e a correção) acontece
+   ========================================= */
+
+@media (min-width: 992px) {
+
+    /* 1. Esconde o botão hambúrguer */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* 2. Mostra a navegação e alinha */
+    .main-nav {
+        display: block;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .main-nav ul {
+        display: flex; /* <-- Importante */
+        flex-direction: row; /* Alinha na horizontal */
+        gap: var(--space-1x);
+    }
+
+    .main-nav li {
+        width: auto; /* Largura automática */
+    }
+
+    .main-nav a {
+        border-bottom: none; /* Remove a borda do mobile */
+    }
+
+    .main-nav a:hover,
+    .main-nav li.active a {
+        background-color: var(--color-primary);
+        color: var(--color-neutral-100);
+        border-radius: var(--border-radius);
+    }
+
+    /* 3. A CORREÇÃO DO SEU BUG */
+    /* No desktop, o dropdown volta a ser escondido e absoluto */
+    .dropdown-menu {
+        display: none; /* <-- AGORA VAI FUNCIONAR */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--color-neutral-100);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        min-width: 200px;
+        z-index: 1000;
+    }
+
+    .dropdown-menu a {
+        font-size: var(--font-size-md); /* Volta ao tamanho normal */
+        padding-left: var(--space-2x); /* Volta ao padding normal */
+        text-align: left;
+        border-radius: 0;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    
+    .dropdown-menu a:hover {
+        background-color: var(--color-primary);
+        color: var(--color-neutral-100);
+    }
+
+    /* 4. A REGRA DE HOVER */
+    /* Só no desktop, ao passar o mouse, o menu aparece */
+    li.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}

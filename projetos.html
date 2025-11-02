@@ -4,61 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossos Projetos - Vida na Comunidade</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <header>
-
-        <h1 class="logo">Vida na Comunidade</h1>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
-            </ul>
-        </nav>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Vida na Comunidade</a>
+            
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    
+                    <li class="dropdown active">
+                        <a href="projetos.html">Projetos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Projeto Educação Digital</a></li>
+                            <li><a href="#">Projeto Sopa Solidária</a></li>
+                            <li><a href="#">Projeto Seja um Herói</a></li>
+                            <li><a href="#">Ver Todos</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="cadastro.html">Participe</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                &#9776; </button>
+        </div>
     </header>
 
-    <main>
-        <h1>Conheça Nossas Iniciativas</h1>
+        <main>
+        <section class="page-section">
+        <div class="container"> <h1>Nossos Projetos</h1>
+            <p>Conheça as frentes em que atuamos para mudar o mundo.</p>
 
-        <section>
-            <h2>Projetos Sociais</h2>
-            
-            <article class="card-projeto">
-                <h3>Projeto Educação Digital</h3>
-                <img src="imagens/projeto-educacao.jpg" alt="Crianças em sala de aula usando computadores.">
-                <p>Levamos inclusão digital para comunidades carentes, ensinando programação e informática básica.</p>
-            </article>
+        <div class="row">
 
-            <article>
-                <h3>Projeto Sopa Solidária</h3>
-                <img src="imagens/projeto-sopa.jpg" alt="Voluntários distribuindo alimentos.">
-                <p>Distribuímos refeições para pessoas em situação de vulnerabilidade social todas as noites.</p>
-            </article>
-        </section>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="imagens/ensine.jpg" alt="Educação" class="card-img">
+                    <div class="card-body">
+                        <span class="badge badge-primary">Educação</span>
 
-        <section>
-            <h2>Seja um Voluntário</h2>
-            <p>Você pode fazer a diferença! Precisamos de voluntários para todas as nossas frentes de atuação.</p>
-            <p>Para participar, <a href="cadastro.html">clique aqui e faça seu cadastro</a>.</p>
-        </section>
+                        <h3 class="card-title">Projeto Educação Digital</h3>
+                        <p class="card-text">Levamos inclusão digital para comunidades carentes.</p>
+                        <a href="#" class="btn btn-outline">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
 
-        <section>
-            <h2>Como Doar</h2>
-            <p>Sua doação nos ajuda a manter nossos projetos ativos. Você pode contribuir de diversas formas:</p>
-            <ul>
-                <li>Doação única via PIX: (chave pix)</li>
-                <li>Doação recorrente: <a href="cadastro.html">Cadastre-se como doador</a></li>
-            </ul>
-        </section>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="imagens/sopa.jpg" alt="Alimentação" class.="card-img">
+                    <div class="card-body">
+                        <span class="badge badge-success">Alimentação</span>
+
+                        <h3 class="card-title">Sopa Solidária</h3>
+                        <p class="card-text">Distribuímos refeições para pessoas em vulnerabilidade.</p>
+                        <a href="#" class="btn btn-outline">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="imagens/sejaumheroi.jpg" alt="Voluntariado" class="card-img">
+                    <div class="card-body">
+                        <span class="badge badge-warning">Voluntariado</span>
+
+                        <h3 class="card-title">Seja um Herói</h3>
+                        <p class="card-text">Nosso programa de voluntariado está sempre aberto.</p>
+                        <a href="#" class="btn btn-outline">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> </div> </main>
     </main>
 
-    <footer>
-        <p>&copy; 2025 - Vida na Comunidade. Todos os direitos reservados.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Vida na Comunidade</h3>
+                    <p>Nossa missão é transformar vidas...</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                        <li><a href="cadastro.html">Participe</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contato</h3>
+                    <p>Rua Fictícia, 123<br>contato@ong.com.br</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vida na Comunidade. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="js/main.js"></script>
 
 </body>
 </html>
