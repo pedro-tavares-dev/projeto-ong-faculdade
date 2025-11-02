@@ -56,3 +56,34 @@ legend {
     color: var(--color-primary);
     padding: 0 var(--space-2x);
 }
+
+/* --- Estilos de Validação JS --- */
+
+.form-error-message {
+    color: var(--color-danger);
+    font-size: var(--font-size-sm); /* 14px */
+    margin-top: var(--space-1x); /* 8px */
+    
+    /* Começa escondido, mas de um jeito que o JS controla */
+    display: none;
+}
+
+/* Quando o JS adiciona a classe .error no form-group... */
+.form-group.error .form-error-message {
+    display: block; /* A mensagem de erro aparece */
+}
+
+.form-group.error .form-control {
+    border-color: var(--color-danger); /* A borda fica vermelha */
+    background-color: #fff8f8; /* Fundo levemente rosado */
+}
+
+/* --- Desligando a Validação Antiga --- */
+/* Isso desfaz os campos vermelhos que vimos na Entrega II,
+   pois agora o JS vai controlar 100% */
+   
+.form-control:invalid:not(:placeholder-shown),
+.form-control:valid {
+    border-color: var(--color-neutral-300); /* Volta à borda normal */
+    background-color: var(--color-neutral-100); /* Volta ao fundo normal */
+}
